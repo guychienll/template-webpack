@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from './button.module.scss';
 import { clsx } from 'clsx';
 
 const Button: React.FC<{
@@ -9,16 +8,16 @@ const Button: React.FC<{
     <button
       data-testid="button"
       className={clsx([
-        'outline-0',
-        'border-amber-400',
+        'bg-gray-500',
+        'border-gray-100',
+        'text-gray-50',
         'border-4',
-        'font-bold',
         'py-2',
         'px-4',
-        'm-2',
-        'rounded',
-        'hover:bg-amber-400',
-        styles.button,
+        'rounded-lg',
+        'text-gray-800',
+        'disabled:opacity-50',
+        'disabled:cursor-not-allowed',
       ])}
     >
       {props.children}
