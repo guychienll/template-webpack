@@ -9,7 +9,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:storybook/recommended',
+  ],
   rules: {},
   overrides: [
     {
@@ -32,7 +36,8 @@ module.exports = {
         '.eslintrc.js',
         'webpack.config.js',
         'jest.config.js',
-        'jest.setup.js',
+        'jest.setup.ts',
+        'tailwind.config.js',
       ],
       parserOptions: {
         sourceType: 'script',

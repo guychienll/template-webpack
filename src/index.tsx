@@ -1,9 +1,14 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
-import styles from '@/base.scss';
+import '@/base.scss';
+import Button from '@/components/Button';
 
 const App: React.FC = () => {
-  return <div className={styles.wrapper}></div>;
+  return (
+    <div>
+      <Button>Click Me!</Button>
+    </div>
+  );
 };
 
 const root = () => {

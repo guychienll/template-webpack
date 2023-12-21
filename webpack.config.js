@@ -37,7 +37,7 @@ const baseConfig = {
         ],
       },
       {
-        test: /\.(scss)?$/,
+        test: /\.module.(scss)?$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -58,7 +58,28 @@ const baseConfig = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: ['postcss-preset-env'],
+                plugins: { 'postcss-preset-env': {} },
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(scss)?$/,
+        exclude: /\.module.(scss)?$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: { tailwindcss: {}, 'postcss-preset-env': {} },
               },
             },
           },
