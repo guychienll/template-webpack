@@ -85,7 +85,7 @@ const config = {
       });
 
       config.module.rules.push({
-        test: /\.(scss)?$/,
+        test: /\.module.(scss)?$/,
         use: [
           'style-loader',
           {
@@ -101,6 +101,24 @@ const config = {
             options: {
               postcssOptions: {
                 plugins: ['postcss-preset-env'],
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      });
+
+      config.module.rules.push({
+        test: /\.(scss)?$/,
+        exclude: /\.module.(scss)?$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: ['tailwindcss', 'postcss-preset-env'],
               },
             },
           },
