@@ -6,6 +6,7 @@ const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 const isProduction = mode === 'production';
@@ -124,11 +125,23 @@ if (isProduction) {
       minimizer: [
         new TerserPlugin({
           parallel: true,
-          extractComments: true,
           terserOptions: {
+            format: {
+              comments: false,
+            },
             compress: {
               passes: 2,
             },
+          },
+        }),
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              'default',
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
           },
         }),
       ],
