@@ -1,3 +1,5 @@
+const jest = require('./jest.config.js');
+
 module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
@@ -42,6 +44,10 @@ module.exports = {
       parserOptions: {
         sourceType: 'script',
       },
+    },
+    {
+      files: jest.testMatch,
+      extends: ['plugin:testing-library/react'],
     },
   ],
 };

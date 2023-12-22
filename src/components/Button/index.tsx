@@ -1,16 +1,20 @@
 import * as React from 'react';
 import { clsx } from 'clsx';
+import { MouseEventHandler } from 'react';
 
 const Button: React.FC<{
   children?: React.ReactNode;
+  onClick?: MouseEventHandler;
+  disabled?: boolean;
 }> = (props) => {
   return (
     <button
       data-testid="button"
+      onClick={props.onClick}
+      disabled={props.disabled}
       className={clsx([
         'bg-gray-500',
         'border-gray-100',
-        'text-gray-50',
         'border-4',
         'py-2',
         'px-4',
