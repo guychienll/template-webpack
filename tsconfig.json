@@ -4,6 +4,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "noImplicitAny": false,
     "jsx": "react",
     "target": "esnext",
     "module": "esnext",

@@ -80,7 +80,11 @@ const baseConfig = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: { tailwindcss: {}, 'postcss-preset-env': {} },
+                plugins: [
+                  ['tailwindcss', {}],
+                  ['postcss-preset-env', {}],
+                  ['css-has-pseudo', {}],
+                ],
               },
             },
           },

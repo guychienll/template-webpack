@@ -1,6 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 
-:root {
+// :root {
+// }
+
+section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+article {
+  display: inline-block;
+  width: 40%;
+}
+
+h1,
+h2 {
+  font-size: 1.2em;
+}
+
+h2 {
+  font-size: 1em;
+  color: rgb(150, 149, 149);
+}
+
+h1,
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+h1:has(+ h2) {
+  margin: 0 0 0.25rem 0;
+  background: red;
 }
